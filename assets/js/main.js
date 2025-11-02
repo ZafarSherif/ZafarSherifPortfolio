@@ -1,4 +1,16 @@
 // ===================================
+// Timeline Accordion Toggle
+// ===================================
+const timelineItems = document.querySelectorAll('.timeline-content');
+
+timelineItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // Toggle expanded class
+        this.classList.toggle('expanded');
+    });
+});
+
+// ===================================
 // Mobile Menu Toggle
 // ===================================
 const hamburger = document.querySelector('.hamburger');
