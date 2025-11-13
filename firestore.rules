@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Contacts collection - only allow writes, no reads from client
+    match /contacts/{document} {
+      // Allow anyone to create a contact submission
+      allow create: if request.auth == null
+                    && request.resource.data.keys().hasAll(['name', 'email', 'message', 'timestamp'])
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() < 100
+                    && request.resource.data.email is string
+                    && request.resource.data.email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() > 0
+                    && request.resource.data.message.size() < 5000;
+
+      // Deny all reads from the client side (you'll read these from Firebase Console or admin SDK)
+      allow read: if false;
+
+      // Deny updates and deletes
+      allow update, delete: if false;
+    }
+  }
+}

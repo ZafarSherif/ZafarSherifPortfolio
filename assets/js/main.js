@@ -121,47 +121,75 @@ window.addEventListener('scroll', () => {
 });
 
 // ===================================
-// Contact Form Handling
+// Contact Form Handling with Firebase
 // ===================================
+import { db, collection, addDoc, serverTimestamp } from './firebase-config.js';
+
 const contactForm = document.getElementById('contactForm');
+const submitButton = contactForm.querySelector('.submit-button');
 
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Disable submit button to prevent double submission
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
 
     const formData = new FormData(contactForm);
     const data = {
         name: formData.get('name'),
         email: formData.get('email'),
-        message: formData.get('message')
+        message: formData.get('message'),
+        timestamp: serverTimestamp(),
+        userAgent: navigator.userAgent
     };
 
-    // You can integrate with services like Formspree, EmailJS, or your own backend
-    console.log('Form submitted:', data);
+    try {
+        // Add document to Firestore
+        const docRef = await addDoc(collection(db, 'contacts'), data);
+        console.log('Message sent with ID: ', docRef.id);
 
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
+        // Show success message
+        showNotification('✅ Thank you! Your message has been sent successfully.', 'success');
 
-    // Reset form
-    contactForm.reset();
-
-    // Example: Send to Formspree (replace with your endpoint)
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     alert('Thank you for your message! I will get back to you soon.');
-    //     contactForm.reset();
-    // })
-    // .catch(error => {
-    //     alert('Oops! There was a problem sending your message. Please try again.');
-    //     console.error('Error:', error);
-    // });
+        // Reset form
+        contactForm.reset();
+    } catch (error) {
+        console.error('Error sending message: ', error);
+        showNotification('❌ Oops! There was a problem. Please try again or email me directly.', 'error');
+    } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+    }
 });
+
+// Notification helper function
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+        color: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-weight: bold;
+        z-index: 9999;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        animation: slideInUp 0.3s ease;
+        max-width: 400px;
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOutDown 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 5000);
+}
 
 // ===================================
 // Typing Effect for Hero Section (Optional Enhancement)

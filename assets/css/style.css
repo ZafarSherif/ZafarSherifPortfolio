@@ -278,6 +278,113 @@ body {
 }
 
 /* ===================================
+   Split Screen Hero
+   =================================== */
+.hero-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    gap: 60px;
+    min-height: 100vh;
+}
+
+.hero-left {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-left .glitch {
+    font-size: 4.5rem;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-tech-stack {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(157, 78, 221, 0.2);
+}
+
+.hero-tech-stack h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-badge {
+    padding: 10px 18px;
+    background: rgba(157, 78, 221, 0.2);
+    border: 1px solid var(--secondary-color);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.tech-badge:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+}
+
+/* ===================================
    About Section
    =================================== */
 .about-section {
@@ -291,11 +398,18 @@ body {
     align-items: center;
 }
 
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
 .image-wrapper {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    max-width: 300px;
+    width: 100%;
 }
 
 .image-wrapper img {
@@ -553,6 +667,22 @@ body {
     background: var(--card-bg);
 }
 
+.project-category {
+    margin-bottom: 80px;
+}
+
+.project-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -628,8 +758,17 @@ body {
 
 .project-info h3 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: var(--primary-color);
+}
+
+.project-company {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
 .project-info p {
@@ -854,6 +993,25 @@ body {
         gap: 40px;
     }
 
+    /* Split Hero Responsive */
+    .hero-split {
+        flex-direction: column;
+        padding: 100px 40px 60px;
+        min-height: auto;
+    }
+
+    .hero-left {
+        text-align: center;
+    }
+
+    .hero-left .glitch {
+        font-size: 3rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
     .glitch {
         font-size: 3rem;
     }
@@ -922,4 +1080,26 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+    }
 }

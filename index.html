@@ -37,7 +37,47 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - SPLIT SCREEN VERSION -->
+    <!-- TO REVERT: Comment out this section and uncomment the "ORIGINAL" section below -->
+    <section id="home" class="hero hero-split">
+        <div class="hero-left">
+            <div class="hero-particles"></div>
+            <h1 class="glitch" data-text="Zafar Sherif">Zafar Sherif</h1>
+            <p class="hero-subtitle">Software Developer | Casino Game Specialist</p>
+            <p class="hero-description">Crafting engaging gaming experiences with cutting-edge technology</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+        <div class="hero-right">
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Games Shipped</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+            </div>
+            <div class="hero-tech-stack">
+                <h3>Tech Stack</h3>
+                <div class="tech-icons">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Cocos Creator</span>
+                    <span class="tech-badge">Unity</span>
+                    <span class="tech-badge">Phaser.js</span>
+                    <span class="tech-badge">React</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORIGINAL HERO SECTION - Uncomment to revert -->
+    <!--
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-particles"></div>
@@ -50,6 +90,7 @@
             <span></span>
         </div>
     </section>
+    -->
 
     <!-- About Section -->
     <section id="about" class="section about-section">
@@ -239,7 +280,6 @@
                 <div class="education-item">
                     <h4>Bachelor of Technology, Computer Science and Engineering</h4>
                     <p class="school">Mahatma Gandhi University</p>
-                    <p class="duration">2011 - 2015</p>
                 </div>
             </div>
 
@@ -255,58 +295,147 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project1.jpg" alt="Mega Slots">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">View Details</a>
+            <h2 class="section-title">Projects</h2>
+
+            <!-- Professional Projects -->
+            <div class="project-category">
+                <h3 class="category-title">💼 Professional Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/neon-vault.jpg" alt="Neon Vault Slots">
+                            <div class="project-overlay">
+                                <a href="https://www.hollywoodcasino.com/hollywood-casino-online/" target="_blank" class="project-link">View Live</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Neon Vault Slots</h3>
+                            <span class="project-company">Penn-Interactive</span>
+                            <p>Front-end architecture for Hollywood Casino slots with dynamic game logic, animations, and backend-driven updates for seamless gameplay.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>Casino Games</span>
+                                <span>Animations</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Mega Slots 777</h3>
-                        <p>A high-performance slot machine game with stunning graphics and engaging bonus features. Built with Phaser.js and WebGL.</p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>Phaser.js</span>
-                            <span>WebGL</span>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/wpt-global.jpg" alt="World Poker Tour Global">
+                            <div class="project-overlay">
+                                <a href="https://wptglobal.com/" target="_blank" class="project-link">View Live</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>World Poker Tour Global</h3>
+                            <span class="project-company">A5 Labs</span>
+                            <p>Front-end development for the world's most popular poker game. Multi-platform support (mobile & desktop) with integrated payment systems and New Relic monitoring.</p>
+                            <div class="project-tags">
+                                <span>TypeScript</span>
+                                <span>Multi-Platform</span>
+                                <span>Payments</span>
+                                <span>New Relic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/card-wars.jpg" alt="Card Wars">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Card Wars</h3>
+                            <span class="project-company">Bombay Play</span>
+                            <p>Led front-end for PvP card battler featuring unique cards and upgradeable characters. Built team through interviewing and onboarding engineers.</p>
+                            <div class="project-tags">
+                                <span>Cocos Creator</span>
+                                <span>PvP</span>
+                                <span>Team Lead</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/lucky-north.jpg" alt="Lucky North Casino">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Lucky North Casino</h3>
+                            <span class="project-company">Ruby Seven Studios</span>
+                            <p>Mobile casino game for iOS with video poker mechanics. Independently managed project lifecycle from development to QA.</p>
+                            <div class="project-tags">
+                                <span>iOS</span>
+                                <span>Poker</span>
+                                <span>Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/big-spin-bingo.jpg" alt="Big Spin Bingo">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Big Spin Bingo</h3>
+                            <span class="project-company">Ruby Seven Studios</span>
+                            <p>Social bingo game with real-time multiplayer. Collaborated with QA/LiveOps teams using Scrum methodology.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>Bingo</span>
+                                <span>Multiplayer</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project2.jpg" alt="Roulette Master">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">View Details</a>
+            <!-- Personal Projects -->
+            <div class="project-category">
+                <h3 class="category-title">🚀 Personal Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/personal-project1.jpg" alt="Personal Project">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Your Personal Project</h3>
+                            <span class="project-company">Side Project</span>
+                            <p>Add your personal projects here - game prototypes, open source contributions, or experimental work you're proud of.</p>
+                            <div class="project-tags">
+                                <span>Custom Tech</span>
+                                <span>Hobby</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Roulette Master</h3>
-                        <p>Real-time multiplayer roulette game with live betting and chat features. Supports 1000+ concurrent players.</p>
-                        <div class="project-tags">
-                            <span>Node.js</span>
-                            <span>WebSocket</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project3.jpg" alt="Blackjack Pro">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">View Details</a>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/personal-project2.jpg" alt="Personal Project">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View on GitHub</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Blackjack Pro</h3>
-                        <p>Classic blackjack with AI dealer and advanced betting strategies. Features smooth animations and realistic card physics.</p>
-                        <div class="project-tags">
-                            <span>TypeScript</span>
-                            <span>PixiJS</span>
-                            <span>AI</span>
+                        <div class="project-info">
+                            <h3>Another Personal Project</h3>
+                            <span class="project-company">Side Project</span>
+                            <p>Showcase more personal work - maybe a game jam entry, tutorial project, or open source contribution.</p>
+                            <div class="project-tags">
+                                <span>Custom Tech</span>
+                                <span>Learning</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -320,34 +449,34 @@
             <h2 class="section-title">Fun Facts About Me</h2>
             <div class="facts-grid">
                 <div class="fact-card">
-                    <div class="fact-icon-large">🎸</div>
-                    <h3>Music Lover</h3>
-                    <p>I play guitar and enjoy creating music in my spare time. Rock and jazz are my go-to genres!</p>
+                    <div class="fact-icon-large">🧩</div>
+                    <h3>Puzzle Lover</h3>
+                    <p>Solving puzzles keeps my problem-solving skills sharp and my curiosity alive.</p>
                 </div>
                 <div class="fact-card">
                     <div class="fact-icon-large">🏃</div>
                     <h3>Fitness Enthusiast</h3>
-                    <p>Running marathons and hitting the gym keeps me energized and focused on my goals.</p>
+                    <p>Long walks and hitting the gym keeps me energized and focused on my goals.</p>
                 </div>
                 <div class="fact-card">
                     <div class="fact-icon-large">🌍</div>
                     <h3>Travel Addict</h3>
-                    <p>Visited 25+ countries. Always looking for the next adventure and new experiences.</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon-large">☕</div>
-                    <h3>Coffee Connoisseur</h3>
-                    <p>Can't start coding without my morning espresso. Favorite roast: Ethiopian Yirgacheffe.</p>
+                    <p>Visited 7 countries so far. Always looking for the next adventure and new experiences.</p>
                 </div>
                 <div class="fact-card">
                     <div class="fact-icon-large">🎲</div>
-                    <h3>Board Game Geek</h3>
-                    <p>Love playing strategic board games with friends. Current favorite: Terraforming Mars.</p>
+                    <h3>Board Game Strategist</h3>
+                    <p>I love analyzing both digital and tabletop games to understand what makes them fun.</p>
                 </div>
                 <div class="fact-card">
-                    <div class="fact-icon-large">📚</div>
-                    <h3>Bookworm</h3>
-                    <p>Always reading sci-fi novels and tech books. Recent read: "The Phoenix Project".</p>
+                    <div class="fact-icon-large">📱</div>
+                    <h3>Tech Enthusiast</h3>
+                    <p>I love exploring new tech, and yes, I can name most phones and computers by their specs.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon-large">📈</div>
+                    <h3>Finance Curious</h3>
+                    <p>I enjoy tracking the stock market and digging into the tech that powers modern finance.</p>
                 </div>
             </div>
         </div>
@@ -362,9 +491,9 @@
                     <h3>Get In Touch</h3>
                     <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
                     <div class="contact-methods">
-                        <a href="mailto:your.email@example.com" class="contact-method">
+                        <a href="mailto:zafar.sherif@gmail.com" class="contact-method">
                             <span class="contact-icon">📧</span>
-                            <span>your.email@example.com</span>
+                            <span>zafar.sherif@gmail.com</span>
                         </a>
                         <a href="https://github.com/ZafarSherif" target="_blank" class="contact-method">
                             <span class="contact-icon">💻</span>
@@ -398,10 +527,10 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Zafar. All rights reserved.</p>
-            <p>Made with ❤️ and lots of coffee</p>
+            <p>Made with ❤️ and lots of AI</p>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
